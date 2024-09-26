@@ -23,4 +23,7 @@ public class MessageModel
     // 是否有未读的新消息
     public bool HasUnreadMessages { get; set; }
     
+    // 是否被选中
+    public bool IsSelected { get; set; }
+    
 }

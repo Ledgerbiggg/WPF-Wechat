@@ -1,37 +1,33 @@
 ﻿using Le.WeChat.Model;
 using Le.WeChat.Service.IService;
+using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Regions;
 using Prism.Services.Dialogs;
 
 namespace LeWeChat.ViewModels;
 
 public class MainViewModel : BindableBase
 {
+    public DelegateCommand<Object> ToMessageBox { get; set; }
+    public DelegateCommand<Object> ToContactsBox { get; set; }
+    public DelegateCommand<Object> ToFavoritesBox { get; set; }
     private readonly IDialogService _dialogService;
-    private readonly IMessageService _messageService;
-    private IEnumerable<MessageModel> _messageModels;
-
-    public IEnumerable<MessageModel> MessageModels
-    {
-        get { return _messageModels; }
-        set { SetProperty(ref _messageModels, value); }
-    }
+    private readonly IRegionManager _regionManager;
 
 
     public MainViewModel(
         IDialogService dialogService,
-        IMessageService messageService
+        IRegionManager regionManager
     )
     {
         _dialogService = dialogService;
-        _messageService = messageService;
-        
+        _regionManager = regionManager;
+        ToMessageBox = new DelegateCommand<object>(NavigateToMessageBox);
+        ToContactsBox = new DelegateCommand<object>(NavigateToContactsBox);
+        ToFavoritesBox = new DelegateCommand<object>(NavigateToFavoritesBox);
         // 在启动主窗口之前启动登录窗口
         // OpenLoginWindow();
-        
-        // 中间的消息内容
-        MessageModels = _messageService.GetAllMessages();
-
     }
 
     private void OpenLoginWindow()
@@ -47,5 +43,18 @@ public class MainViewModel : BindableBase
                 var su = result.Parameters.GetValue<SysUserModel>("user");
             }
         });
+    }
+
+    private void NavigateToMessageBox(object obj)
+    {
+        _regionManager.RequestNavigate("MainRegion", "MessageBoxView");
+    }
+    private void NavigateToContactsBox(object obj)
+    {
+        _regionManager.RequestNavigate("MainRegion", "MessageBoxView");
+    }
+    private void NavigateToFavoritesBox(object obj)
+    {
+        _regionManager.RequestNavigate("MainRegion", "MessageBoxView");
     }
 }
