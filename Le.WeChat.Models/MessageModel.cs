@@ -1,6 +1,8 @@
-﻿namespace Le.WeChat.Model;
+﻿using Prism.Mvvm;
 
-public class MessageModel
+namespace Le.WeChat.Model;
+
+public class MessageModel : BindableBase
 {
     // 消息的标题
     public string Title { get; set; }
@@ -22,8 +24,13 @@ public class MessageModel
 
     // 是否有未读的新消息
     public bool HasUnreadMessages { get; set; }
+
+    private bool _isSelected;
     
-    // 是否被选中
-    public bool IsSelected { get; set; }
-    
+    // 是否被选中 (响应式属性)
+    public bool IsSelected
+    {
+        get => _isSelected;
+        set => SetProperty(ref _isSelected, value); // 使用 SetProperty 进行响应式更新
+    }
 }

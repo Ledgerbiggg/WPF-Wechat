@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace LeWeChat.Assets.Controls;
+namespace LeWeChat.Controls;
 
 public partial class SearchBox : UserControl
 {

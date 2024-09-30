@@ -4,9 +4,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
-        xmlns:c="clr-namespace:LeWeChat.Assets.Controls"
         xmlns:regions="http://prismlibrary.com/"
-        Icon="../Assets/Images/wechat-icon.jpg"
+        xmlns:controls="clr-namespace:LeWeChat.Controls"
+        Icon="../Assets/Images/wechat-icon.png"
         MinHeight="400" MinWidth="700"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" FontFamily="Microsoft YaHei"
         FontSize="13" Foreground="#333" FontWeight="ExtraLight"
@@ -79,7 +79,7 @@
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0">
                             <!-- 顶部搜索框 -->
-                            <c:SearchBox Margin="8" Panel.ZIndex="50"/>
+                            <controls:SearchBox Margin="8" Panel.ZIndex="50"/>
                         </StackPanel>
                         <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,10,0">
                             <Button Content="&#xe620;" FontFamily="{StaticResource Icons}"

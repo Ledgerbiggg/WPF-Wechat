@@ -21,6 +21,8 @@
       <Resource Include="Assets\Images\wechat-icon.jpg" />
       <None Remove="Assets\Images\user1.jpg" />
       <Resource Include="Assets\Images\user1.jpg" />
+      <None Remove="Assets\Images\wechat-icon.png" />
+      <Resource Include="Assets\Images\wechat-icon.png" />
     </ItemGroup>
 
     <ItemGroup>
