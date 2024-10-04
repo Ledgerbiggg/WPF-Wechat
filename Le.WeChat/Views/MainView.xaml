@@ -4,10 +4,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
-        xmlns:c="clr-namespace:LeWeChat.Assets.Controls"
-        Icon="../Assets/Images/wechat-icon.jpg"
-        mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen" FontFamily="Microsoft YaHei"
+        xmlns:regions="http://prismlibrary.com/"
+        xmlns:controls="clr-namespace:LeWeChat.Controls"
+        Icon="../Assets/Images/wechat-icon.png"
+        MinHeight="400" MinWidth="700"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" FontFamily="Microsoft YaHei"
         FontSize="13" Foreground="#333" FontWeight="ExtraLight"
         Title="Window" Height="550" Width="900">
     <WindowChrome.WindowChrome>
@@ -35,13 +36,16 @@
                             <Image Source="../Assets/Images/user1.jpg" Width="40" Height="40" />
                             <StackPanel Margin="20,20,0,0">
                                 <RadioButton Content="&#xe63c;" FontFamily="{StaticResource Icons}"
-                                             Background="Transparent" GroupName="IconGroupTop"
+                                             Background="Transparent" GroupName="IconGroupTop" IsChecked="True"
+                                             Command="{Binding ToMessageBox }"
                                              Style="{StaticResource SidebarIconTriggerButtonStyle}" />
                                 <RadioButton Content="&#xe614;" FontFamily="{StaticResource Icons}"
                                              Background="Transparent" GroupName="IconGroupTop"
+                                             Command="{Binding ToContactsBox }"
                                              Style="{StaticResource SidebarIconTriggerButtonStyle}" />
                                 <RadioButton Content="&#xe632;" FontFamily="{StaticResource Icons}"
                                              Background="Transparent" GroupName="IconGroupTop"
+                                             Command="{Binding ToFavoritesBox }"
                                              Style="{StaticResource SidebarIconTriggerButtonStyle}" />
                                 <RadioButton Content="&#xe630;" FontFamily="{StaticResource Icons}"
                                              Background="Transparent" GroupName="IconGroupTop"
@@ -63,9 +67,9 @@
                     </Grid>
                 </Grid>
                 <!-- 中间的消息选择区域 -->
-                <Grid Grid.Column="1" Background="#e5e4e4">
+                <Grid Grid.Column="1" Background="#E5E5E5">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0" Height="50">
@@ -75,8 +79,9 @@
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0">
                             <!-- 顶部搜索框 -->
-                            <c:SearchBox Margin="8" Panel.ZIndex="50"/>
+                            <controls:SearchBox Margin="8" Panel.ZIndex="50"/>
                         </StackPanel>
+                        <!-- 加号的一个按钮 -->
                         <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,10,0">
                             <Button Content="&#xe620;" FontFamily="{StaticResource Icons}"
                                     Background="Transparent"
@@ -86,27 +91,16 @@
                     </Grid>
                     <StackPanel Grid.Row="1">
                         <!-- 遍历MessageModels去生成实例 -->
-                        <ItemsControl ItemsSource="{Binding MessageModels}">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <Border Height="55" Margin="5" BorderBrush="Gray" BorderThickness="1" CornerRadius="5">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image Source="{Binding AvatarUrl}" Width="40" Height="40" Margin="0,0,10,0"/>
-                                            <StackPanel>
-                                                <TextBlock Text="{Binding Title}" FontWeight="Bold" />
-                                                <TextBlock Text="{Binding LastContent}" />
-                                                <TextBlock Text="{Binding MessageTime, StringFormat='{}{0:HH:mm}'}" FontStyle="Italic" FontSize="12"/>
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </Border>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
+                        <ContentControl regions:RegionManager.RegionName="MessageRegion" />
                     </StackPanel>
                 </Grid>
                 <Grid Grid.Column="2" Background="#f5f5f5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
                     <!-- 右上角三图标 -->
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top"
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top"
                                 HorizontalAlignment="Right"
                                 Margin="0,0,0,0">
                         <!-- 钉在桌面上 -->
@@ -128,6 +122,8 @@
                                 Style="{StaticResource ControlButtonStyle}"
                                 Click="Button_Close_Click" />
                     </StackPanel>
+                    <!-- 消息窗体的内容 -->
+                    <ContentControl Grid.Row="1"  regions:RegionManager.RegionName="ContentRegion" />
                 </Grid>
 
             </Grid>

@@ -3,17 +3,25 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:LeWeChat"
                     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
-                    xmlns:p="http://prismlibrary.com/">
+                    xmlns:p="http://prismlibrary.com/"
+                    xmlns:converter="clr-namespace:Le.WeChat.Common.Converter;assembly=Le.WeChat.Common">
     <Application.Resources>
         <ResourceDictionary>
+            
+            <!-- 全局的 BooleanToVisibilityConverter -->
+            <BooleanToVisibilityConverter x:Key="BoolToVisConverter"/>
+            <converter:InverseBooleanToVisibilityConverter x:Key="InverseBoolToVisConverter"/>
+
+            <!-- 合并外部样式字典 -->
             <ResourceDictionary.MergedDictionaries>
-                <!-- <ui:ThemesDictionary /> -->
-                <!-- <ui:ControlsDictionary /> -->
                 <ResourceDictionary Source="/Assets/Styles/ButtonStyles.xaml" />
+                <ResourceDictionary Source="/Assets/Styles/ImageStyles.xaml" />
+                <ResourceDictionary Source="/Assets/Styles/ContentStyle.xaml" />
                 <ResourceDictionary>
                     <FontFamily x:Key="Icons">/Assets/Fonts/#iconfont</FontFamily>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
+
         </ResourceDictionary>
     </Application.Resources>
 </p:PrismApplication>

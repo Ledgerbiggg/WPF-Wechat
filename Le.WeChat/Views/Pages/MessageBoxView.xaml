@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="LeWeChat.Views.Pages.MessageBoxView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:LeWeChat.Views.Pages"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!-- 使用 ItemsControl -->
+        <ItemsControl ItemsSource="{Binding MessageModels}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                        <RadioButton
+                            Padding="5"
+                            Command="{Binding DataContext.ClickMessageItemCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                            CommandParameter="{Binding}">
+                            <!-- 样式的修改 -->
+                            <RadioButton.Style>
+                                <Style TargetType="RadioButton">
+                                    <Style.Triggers>
+                                        <!-- 使用数据去修改样式IsSelected -->
+                                        <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                            <Setter Property="Background" Value="#D6D3D1" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding IsSelected}" Value="False">
+                                            <Setter Property="Background" Value="#E2DFDE" />
+                                        </DataTrigger>  
+                                        <!-- 使用触发器去修改样式 -->
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#CFCBC9" />
+                                        </Trigger>
+                                    </Style.Triggers>    
+                                </Style>
+                            </RadioButton.Style>
+                            <!-- 重写原生样式 -->
+                            <RadioButton.Template>
+                                <ControlTemplate TargetType="RadioButton">
+                                    <!-- 仅展示内容，隐藏 RadioButton 本身的外观 -->
+                                    <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                                        <ContentPresenter />
+                                    </Border>
+                                </ControlTemplate>
+                            </RadioButton.Template>
+                    
+                            <StackPanel Orientation="Horizontal">
+                                <!-- 用户的头像 -->
+                                <Image Source="{Binding AvatarUrl}" Width="40" Height="40" Margin="0,0,10,0" />
+                                <!-- 文字内容 -->
+                                <Grid>
+                                    <!-- 定义三行 -->
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="7" />
+                                        <RowDefinition Height="1*" />
+                                    </Grid.RowDefinitions>
+                                    <!-- 定义两列 -->
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="75" />
+                                    </Grid.ColumnDefinitions>
+                                    <!-- Title 和 MessageTime 放在第一行，通过列布局来控制位置 -->
+                                    <TextBlock Grid.Column="0" Text="{Binding Title}" Foreground="Black" Grid.Row="0"
+                                               VerticalAlignment="Center" />
+                                    <TextBlock Grid.Column="1" Text="{Binding MessageTime, StringFormat='{}{0:HH:mm}'}"
+                                               FontSize="10"
+                                               Grid.Row="0" Margin="10,0,0,0" VerticalAlignment="Center"
+                                               Foreground="#aaa" />
+                                    <!-- LastContent 放在第二行 -->
+                                    <TextBlock Grid.Column="0" Grid.ColumnSpan="2"
+                                               HorizontalAlignment="Left"
+                                               Text="{Binding LastContent}"
+                                               TextTrimming="CharacterEllipsis"
+                                               Width="110"
+                                               TextWrapping="NoWrap"
+                                               Foreground="#999" Grid.Row="2" />
+                                </Grid>
+                            </StackPanel>
+                        </RadioButton>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <!-- <Button Grid.Row="0" Content="11111" Command="{Binding ClickMessageItemCommand}"></Button> -->
+    </Grid>
+</UserControl>

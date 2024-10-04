@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "H1bn+6IsDpngwLBzr4DdNIILhM21wlRAu5Ln6K3yQN+VNud2LDn8d/jrqvg74m87+WwyMJoUrhB+4cDkRy3afA==",
+  "success": true,
+  "projectFilePath": "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Models\\Le.WeChat.Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512"
+  ],
+  "logs": []
+}

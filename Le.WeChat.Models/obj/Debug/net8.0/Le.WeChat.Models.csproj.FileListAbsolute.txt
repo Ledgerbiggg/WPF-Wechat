@@ -1,0 +1,13 @@
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Models\bin\Debug\net8.0\Le.WeChat.Models.deps.json
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Models\bin\Debug\net8.0\Le.WeChat.Models.dll
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Models\bin\Debug\net8.0\Le.WeChat.Models.pdb
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Models\obj\Debug\net8.0\Le.WeChat.Models.GeneratedMSBuildEditorConfig.editorconfig
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Models\obj\Debug\net8.0\Le.WeChat.Models.AssemblyInfoInputs.cache
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Models\obj\Debug\net8.0\Le.WeChat.Models.AssemblyInfo.cs
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Models\obj\Debug\net8.0\Le.WeChat.Models.csproj.CoreCompileInputs.cache
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Models\obj\Debug\net8.0\Le.WeChat.Models.sourcelink.json
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Models\obj\Debug\net8.0\Le.WeChat.Models.dll
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Models\obj\Debug\net8.0\refint\Le.WeChat.Models.dll
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Models\obj\Debug\net8.0\Le.WeChat.Models.pdb
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Models\obj\Debug\net8.0\ref\Le.WeChat.Models.dll
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Models\obj\Debug\net8.0\Le.WeChat.Models.csproj.AssemblyReference.cache

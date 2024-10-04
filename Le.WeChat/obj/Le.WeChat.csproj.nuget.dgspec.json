@@ -1,0 +1,261 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat\\Le.WeChat.csproj": {}
+  },
+  "projects": {
+    "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Common\\Le.WeChat.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Common\\Le.WeChat.Common.csproj",
+        "projectName": "Le.WeChat.Common",
+        "projectPath": "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Common\\Le.WeChat.Common.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Models\\Le.WeChat.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Models\\Le.WeChat.Models.csproj",
+        "projectName": "Le.WeChat.Models",
+        "projectPath": "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Models\\Le.WeChat.Models.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Prism.Core": {
+              "target": "Package",
+              "version": "[8.1.97, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Service\\Le.WeChat.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Service\\Le.WeChat.Service.csproj",
+        "projectName": "Le.WeChat.Service",
+        "projectPath": "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Service\\Le.WeChat.Service.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Models\\Le.WeChat.Models.csproj": {
+                "projectPath": "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Models\\Le.WeChat.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat\\Le.WeChat.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat\\Le.WeChat.csproj",
+        "projectName": "Le.WeChat",
+        "projectPath": "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat\\Le.WeChat.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Common\\Le.WeChat.Common.csproj": {
+                "projectPath": "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Common\\Le.WeChat.Common.csproj"
+              },
+              "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Models\\Le.WeChat.Models.csproj": {
+                "projectPath": "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Models\\Le.WeChat.Models.csproj"
+              },
+              "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Service\\Le.WeChat.Service.csproj": {
+                "projectPath": "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Service\\Le.WeChat.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Prism.Unity": {
+              "target": "Package",
+              "version": "[8.1.97, )"
+            },
+            "WPF-UI": {
+              "target": "Package",
+              "version": "[4.0.0-rc.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

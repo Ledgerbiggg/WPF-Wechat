@@ -1,0 +1,16 @@
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Service\bin\Debug\net8.0\Le.WeChat.Service.deps.json
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Service\bin\Debug\net8.0\Le.WeChat.Service.dll
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Service\bin\Debug\net8.0\Le.WeChat.Service.pdb
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Service\bin\Debug\net8.0\Le.WeChat.Models.dll
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Service\bin\Debug\net8.0\Le.WeChat.Models.pdb
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Service\obj\Debug\net8.0\Le.WeChat.Service.csproj.AssemblyReference.cache
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Service\obj\Debug\net8.0\Le.WeChat.Service.GeneratedMSBuildEditorConfig.editorconfig
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Service\obj\Debug\net8.0\Le.WeChat.Service.AssemblyInfoInputs.cache
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Service\obj\Debug\net8.0\Le.WeChat.Service.AssemblyInfo.cs
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Service\obj\Debug\net8.0\Le.WeChat.Service.csproj.CoreCompileInputs.cache
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Service\obj\Debug\net8.0\Le.WeChat.Service.sourcelink.json
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Service\obj\Debug\net8.0\Le.WeCha.6AD70128.Up2Date
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Service\obj\Debug\net8.0\Le.WeChat.Service.dll
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Service\obj\Debug\net8.0\refint\Le.WeChat.Service.dll
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Service\obj\Debug\net8.0\Le.WeChat.Service.pdb
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Service\obj\Debug\net8.0\ref\Le.WeChat.Service.dll
