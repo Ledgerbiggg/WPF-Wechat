@@ -16,7 +16,6 @@ E:\project\dot_net\WPF-Wechat\Le.WeChat\bin\Debug\net8.0-windows\Le.WeChat.Servi
 E:\project\dot_net\WPF-Wechat\Le.WeChat\bin\Debug\net8.0-windows\Le.WeChat.Models.pdb
 E:\project\dot_net\WPF-Wechat\Le.WeChat\bin\Debug\net8.0-windows\Le.WeChat.Service.pdb
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Le.WeChat.csproj.AssemblyReference.cache
-E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Assets\Styles\ButtonStyles.baml
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Views\LoginView.baml
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Views\LoginView.g.cs
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Views\MainView.g.cs
@@ -46,5 +45,8 @@ E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Views\Pages\Con
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Views\Pages\ContentBoxView.baml
 E:\project\dot_net\WPF-Wechat\Le.WeChat\bin\Debug\net8.0-windows\Le.WeChat.Common.dll
 E:\project\dot_net\WPF-Wechat\Le.WeChat\bin\Debug\net8.0-windows\Le.WeChat.Common.pdb
-E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Assets\Styles\ImageStyles.baml
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Assets\Styles\ContentStyle.baml
+E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Assets\Styles\ScrollBarStyle.baml
+E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Assets\Styles\ButtonStyle.baml
+E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Assets\Styles\ImageStyle.baml
+E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Assets\Styles\RichTextBoxStyle.baml

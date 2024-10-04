@@ -147,9 +147,9 @@ public class MessageService : IMessageService
                 MessageId = "5",
                 IsMuted = false,
                 HasUnreadMessages = true,
-                IsSelected = false,
-                MessageContents = new ObservableCollection<MessageContentModel>()
-                {
+                IsSelected = true,
+                MessageContents =
+                [
                     new MessageContentModel
                     {
                         IsSentByMe = true,
@@ -157,6 +157,7 @@ public class MessageService : IMessageService
                         Content = "中午有什么安排？",
                         ContentType = MessageType.Text
                     },
+
                     new MessageContentModel
                     {
                         IsSentByMe = false,
@@ -164,6 +165,71 @@ public class MessageService : IMessageService
                         Content = "没啥事，要不要一起吃饭？",
                         ContentType = MessageType.Text
                     },
+
+                    new MessageContentModel
+                    {
+                        IsSentByMe = true,
+                        SentTime = DateTime.Now.AddMinutes(-90),
+                        Content = "好啊，一起去吧。",
+                        ContentType = MessageType.Text
+                    },
+
+                    new MessageContentModel
+                    {
+                        IsSentByMe = true,
+                        SentTime = DateTime.Now.AddMinutes(-90),
+                        Content = "好啊，一起去吧。",
+                        ContentType = MessageType.Text
+                    },
+
+                    new MessageContentModel
+                    {
+                        IsSentByMe = true,
+                        SentTime = DateTime.Now.AddMinutes(-90),
+                        Content = "好啊，一起去吧。",
+                        ContentType = MessageType.Text
+                    },
+
+                    new MessageContentModel
+                    {
+                        IsSentByMe = true,
+                        SentTime = DateTime.Now.AddMinutes(-90),
+                        Content = "好啊，一起去吧。",
+                        ContentType = MessageType.Text
+                    },
+
+                    new MessageContentModel
+                    {
+                        IsSentByMe = true,
+                        SentTime = DateTime.Now.AddMinutes(-90),
+                        Content = "好啊，一起去吧。",
+                        ContentType = MessageType.Text
+                    },
+
+                    new MessageContentModel
+                    {
+                        IsSentByMe = true,
+                        SentTime = DateTime.Now.AddMinutes(-90),
+                        Content = "好啊，一起去吧。",
+                        ContentType = MessageType.Text
+                    },
+
+                    new MessageContentModel
+                    {
+                        IsSentByMe = true,
+                        SentTime = DateTime.Now.AddMinutes(-90),
+                        Content = "好啊，一起去吧。",
+                        ContentType = MessageType.Text
+                    },
+
+                    new MessageContentModel
+                    {
+                        IsSentByMe = true,
+                        SentTime = DateTime.Now.AddMinutes(-90),
+                        Content = "好啊，一起去吧。",
+                        ContentType = MessageType.Text
+                    },
+
                     new MessageContentModel
                     {
                         IsSentByMe = true,
@@ -171,7 +237,8 @@ public class MessageService : IMessageService
                         Content = "好啊，一起去吧。",
                         ContentType = MessageType.Text
                     }
-                }
+
+                ]
             }
         };
 
