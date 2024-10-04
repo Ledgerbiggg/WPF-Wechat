@@ -2,5 +2,5 @@
 
 * 做一个微信的桌面版,还在继续完成中...
 
-![image-20241004133637272](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20241004133637272.png)
+![img](https://cdn.nlark.com/yuque/0/2024/png/35553992/1728020588755-c7ffb286-1d68-4c9b-bbd1-1d92cbefb6d1.png)
 
