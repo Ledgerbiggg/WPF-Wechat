@@ -45,16 +45,31 @@ public class MainViewModel : BindableBase
         });
     }
 
+    /// <summary>
+    /// 点击消息图标触发的导航
+    /// </summary>
+    /// <param name="obj"></param>
     private void NavigateToMessageBox(object obj)
     {
-        _regionManager.RequestNavigate("MainRegion", "MessageBoxView");
+        _regionManager.RequestNavigate("MessageRegion", "MessageBoxView");
+        _regionManager.RequestNavigate("ContentRegion", "ContentBoxView");
     }
+    /// <summary>
+    /// 点击联系人触发的导航
+    /// </summary>
+    /// <param name="obj"></param>
     private void NavigateToContactsBox(object obj)
     {
-        _regionManager.RequestNavigate("MainRegion", "MessageBoxView");
+        _regionManager.RequestNavigate("MessageRegion", "MessageBoxView");
+        _regionManager.RequestNavigate("ContentRegion", "ContentBoxView");
     }
+    /// <summary>
+    /// 点击收藏触发的导航
+    /// </summary>
+    /// <param name="obj"></param>
     private void NavigateToFavoritesBox(object obj)
     {
-        _regionManager.RequestNavigate("MainRegion", "MessageBoxView");
+        _regionManager.RequestNavigate("MessageRegion", "MessageBoxView");
+        _regionManager.RequestNavigate("ContentRegion", "ContentBoxView");
     }
 }

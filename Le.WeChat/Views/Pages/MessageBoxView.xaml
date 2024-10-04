@@ -11,45 +11,52 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <!-- 使用你的 ItemsControl -->
+        <!-- 使用 ItemsControl -->
         <ItemsControl ItemsSource="{Binding MessageModels}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Border Height="55" Padding="5" BorderBrush="Gray">
-                        <Border.Style>
-                            <Style TargetType="Border">
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding IsSelected}" Value="True">
-                                        <Setter Property="Background" Value="#C4C4C5" />
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding IsSelected}" Value="False">
-                                        <Setter Property="Background" Value="Transparent" />
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Border.Style>
-
-                        <!-- 使用隐藏的 RadioButton 作为命令触发器 -->
                         <RadioButton
+                            Padding="5"
                             Command="{Binding DataContext.ClickMessageItemCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
-                            CommandParameter="{Binding}"
-                            Background="Transparent"
-                            BorderThickness="0">
-
+                            CommandParameter="{Binding}">
+                            <!-- 样式的修改 -->
+                            <RadioButton.Style>
+                                <Style TargetType="RadioButton">
+                                    <Style.Triggers>
+                                        <!-- 使用数据去修改样式IsSelected -->
+                                        <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                            <Setter Property="Background" Value="#D6D3D1" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding IsSelected}" Value="False">
+                                            <Setter Property="Background" Value="#E2DFDE" />
+                                        </DataTrigger>  
+                                        <!-- 使用触发器去修改样式 -->
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#CFCBC9" />
+                                        </Trigger>
+                                    </Style.Triggers>    
+                                </Style>
+                            </RadioButton.Style>
+                            <!-- 重写原生样式 -->
                             <RadioButton.Template>
                                 <ControlTemplate TargetType="RadioButton">
                                     <!-- 仅展示内容，隐藏 RadioButton 本身的外观 -->
-                                    <ContentPresenter />
+                                    <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                                        <ContentPresenter />
+                                    </Border>
                                 </ControlTemplate>
                             </RadioButton.Template>
-
+                    
                             <StackPanel Orientation="Horizontal">
+                                <!-- 用户的头像 -->
                                 <Image Source="{Binding AvatarUrl}" Width="40" Height="40" Margin="0,0,10,0" />
+                                <!-- 文字内容 -->
                                 <Grid>
+                                    <!-- 定义三行 -->
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition Height="7" />
-                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="1*" />
                                     </Grid.RowDefinitions>
                                     <!-- 定义两列 -->
                                     <Grid.ColumnDefinitions>
@@ -74,7 +81,6 @@
                                 </Grid>
                             </StackPanel>
                         </RadioButton>
-                    </Border>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>

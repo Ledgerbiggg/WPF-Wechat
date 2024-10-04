@@ -18,11 +18,19 @@
       <None Remove="Assets\Fonts\iconfont.ttf" />
       <Resource Include="Assets\Fonts\iconfont.ttf" />
       <None Remove="Assets\Images\wechat-icon.jpg" />
-      <Resource Include="Assets\Images\wechat-icon.jpg" />
       <None Remove="Assets\Images\user1.jpg" />
+      <Resource Include="Assets\Images\user0.jpg" />
       <Resource Include="Assets\Images\user1.jpg" />
       <None Remove="Assets\Images\wechat-icon.png" />
       <Resource Include="Assets\Images\wechat-icon.png" />
+      <None Remove="Assets\Images\user2.jpg" />
+      <Resource Include="Assets\Images\user2.jpg" />
+      <None Remove="Assets\Images\user3.jpg" />
+      <Resource Include="Assets\Images\user3.jpg" />
+      <None Remove="Assets\Images\user4.jpg" />
+      <Resource Include="Assets\Images\user4.jpg" />
+      <None Remove="Assets\Images\user5.jpg" />
+      <Resource Include="Assets\Images\user5.jpg" />
     </ItemGroup>
 
     <ItemGroup>
@@ -32,6 +40,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Le.WeChat.Common\Le.WeChat.Common.csproj" />
       <ProjectReference Include="..\Le.WeChat.Models\Le.WeChat.Models.csproj" />
       <ProjectReference Include="..\Le.WeChat.Service\Le.WeChat.Service.csproj" />
     </ItemGroup>

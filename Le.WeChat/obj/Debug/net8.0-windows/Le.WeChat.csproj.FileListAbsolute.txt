@@ -18,7 +18,6 @@ E:\project\dot_net\WPF-Wechat\Le.WeChat\bin\Debug\net8.0-windows\Le.WeChat.Servi
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Le.WeChat.csproj.AssemblyReference.cache
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Assets\Styles\ButtonStyles.baml
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Views\LoginView.baml
-E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Assets\Controls\SearchBox.g.cs
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Views\LoginView.g.cs
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Views\MainView.g.cs
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\App.g.cs
@@ -26,7 +25,6 @@ E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\GeneratedIntern
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Le.WeChat_MarkupCompile.cache
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Le.WeChat_MarkupCompile.lref
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\App.baml
-E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Assets\Controls\SearchBox.baml
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Views\MainView.baml
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Le.WeChat.g.resources
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Le.WeChat.GeneratedMSBuildEditorConfig.editorconfig
@@ -42,3 +40,11 @@ E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Le.WeChat.genru
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\ref\Le.WeChat.dll
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Views\Pages\MessageBoxView.g.cs
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Views\Pages\MessageBoxView.baml
+E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Controls\SearchBox.g.cs
+E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Controls\SearchBox.baml
+E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Views\Pages\ContentBoxView.g.cs
+E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Views\Pages\ContentBoxView.baml
+E:\project\dot_net\WPF-Wechat\Le.WeChat\bin\Debug\net8.0-windows\Le.WeChat.Common.dll
+E:\project\dot_net\WPF-Wechat\Le.WeChat\bin\Debug\net8.0-windows\Le.WeChat.Common.pdb
+E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Assets\Styles\ImageStyles.baml
+E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Assets\Styles\ContentStyle.baml

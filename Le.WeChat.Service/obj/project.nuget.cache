@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "NkcGl4TLpejDcKdYPEE1hFAGQKDNcsmYTlZlEwYgtcj0YXdcvwiCMepkpEtrmW3G/G6BMbPmhK7sV2ODhFIrEw==",
+  "dgSpecHash": "6CA55O7Zu1tzn+3khoL4KwDKsxXC3b+z/mp1oJSfhL39Dwur1YjBNlcqksPvP53EkQ5I/8Y8RPGod02gx9P4jg==",
   "success": true,
   "projectFilePath": "E:\\project\\dot_net\\WPF-Wechat\\Le.WeChat.Service\\Le.WeChat.Service.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512"
+  ],
   "logs": []
 }

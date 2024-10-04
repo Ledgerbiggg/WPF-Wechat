@@ -10,3 +10,4 @@ E:\project\dot_net\WPF-Wechat\Le.WeChat.Models\obj\Debug\net8.0\Le.WeChat.Models
 E:\project\dot_net\WPF-Wechat\Le.WeChat.Models\obj\Debug\net8.0\refint\Le.WeChat.Models.dll
 E:\project\dot_net\WPF-Wechat\Le.WeChat.Models\obj\Debug\net8.0\Le.WeChat.Models.pdb
 E:\project\dot_net\WPF-Wechat\Le.WeChat.Models\obj\Debug\net8.0\ref\Le.WeChat.Models.dll
+E:\project\dot_net\WPF-Wechat\Le.WeChat.Models\obj\Debug\net8.0\Le.WeChat.Models.csproj.AssemblyReference.cache

@@ -26,6 +26,7 @@ public partial class App : PrismApplication
         containerRegistry.Register<IMessageService, MessageService>();
         // 注册导航
         containerRegistry.RegisterForNavigation<MessageBoxView>();
+        containerRegistry.RegisterForNavigation<ContentBoxView>();
     }
 
     /// <summary>
@@ -47,6 +48,7 @@ public partial class App : PrismApplication
         base.InitializeShell(shell);
 
         // 打开初始的消息页面
-        Container.Resolve<IRegionManager>().RequestNavigate("MainRegion", "MessageBoxView");
+        Container.Resolve<IRegionManager>().RequestNavigate("MessageRegion", "MessageBoxView");
+        Container.Resolve<IRegionManager>().RequestNavigate("ContentRegion", "ContentBoxView");
     }
 }
