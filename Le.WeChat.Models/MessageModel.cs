@@ -9,9 +9,7 @@ public class MessageModel : BindableBase
 
     // 消息的头像 URL
     public string AvatarUrl { get; set; }
-
-    // 消息的时间
-    public DateTime MessageTime { get; set; }
+    
 
     // 消息的 ID
     public string MessageId { get; set; }
@@ -27,6 +25,9 @@ public class MessageModel : BindableBase
 
     // 是否被选中
     private bool _isSelected;
+    
+    // 消息的时间
+    private DateTime _messageTime;
     
     // 新增一条消息
     public void AddMessageContents(string content, MessageType messageType = MessageType.Text)
@@ -60,5 +61,11 @@ public class MessageModel : BindableBase
             // 返回最后一个MessageContentModel的内容
             return MessageContents.Last().Content;
         }
+    }
+    
+    public DateTime MessageTime
+    {
+        get => MessageContents.Last().SentTime;
+        set => SetProperty(ref _messageTime, value);
     }
 }

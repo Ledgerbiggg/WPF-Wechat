@@ -26,7 +26,7 @@
                        Padding="10,0"/>
         </Border>
         <!-- 最外面包一层滚动条的控件 -->
-        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Template="{StaticResource WechatScrollViewer}">
+        <ScrollViewer x:Name="ChatScrollViewer" Grid.Row="1" VerticalScrollBarVisibility="Auto" Template="{StaticResource WechatScrollViewer}">
             <!-- 遍历所有的消息内容去拼接成对话 -->
             <ItemsControl  ItemsSource="{Binding MessageModel.MessageContents}">
                 <ItemsControl.ItemTemplate>
@@ -129,9 +129,12 @@
     
                 <!-- 重写MessageSendRichTextBoxStyle样式 -->
                 <TextBox   Grid.Row="1" 
-                           Text="{Binding CurrentMessageContent, Mode=TwoWay}"
+                           Text="{Binding CurrentMessageContent, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                            Height="200"
                            Style="{StaticResource MessageSendRichTextBoxStyle}">
+                    <TextBox.InputBindings>
+                        <KeyBinding Key="Enter" Command="{Binding SendCommand}" />
+                    </TextBox.InputBindings>
                 </TextBox>
             </Grid>
         </Border>

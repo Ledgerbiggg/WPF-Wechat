@@ -36,7 +36,7 @@ public class MainViewModel : BindableBase
         {
             if (result.Result != ButtonResult.OK)
             {
-                Environment.Exit(0);
+                Environment.Exit(0);  
             }
             else
             {

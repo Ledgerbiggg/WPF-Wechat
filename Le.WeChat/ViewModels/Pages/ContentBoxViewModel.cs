@@ -30,17 +30,30 @@ public class ContentBoxViewModel : ViewModelBase
         _eventAggregator = eventAggregator;
         _eventAggregator.GetEvent<MessageEvent>().Subscribe(SubscribeCommand);
         SendCommand = new DelegateCommand(Send);
+        /*发布消息的时候通知消息的滚动条滚动到最下面*/
+        _eventAggregator.GetEvent<SendEvent>().Publish();
     }
 
     private void Send()
     {
+        if (string.IsNullOrEmpty(CurrentMessageContent))
+        {
+            return;
+        }
         _messageModel.AddMessageContents(CurrentMessageContent);
         CurrentMessageContent = string.Empty;
+        /*发布消息的时候通知消息的滚动条滚动到最下面*/
+        _eventAggregator.GetEvent<SendEvent>().Publish();
     }
 
     private void SubscribeCommand(MessageModel messageModel)
     {
-        Console.WriteLine($"{messageModel.MessageContents}");
+        /*如果这里切换的消息联系人就清空当前的消息*/
+        if (_messageModel!=null && messageModel.MessageId != _messageModel.MessageId)
+        {
+            CurrentMessageContent=string.Empty;
+        }
         MessageModel = messageModel; 
+
     }
 }
