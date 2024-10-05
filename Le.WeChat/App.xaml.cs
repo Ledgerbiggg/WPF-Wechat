@@ -27,6 +27,10 @@ public partial class App : PrismApplication
         // 注册导航
         containerRegistry.RegisterForNavigation<MessageBoxView>();
         containerRegistry.RegisterForNavigation<ContentBoxView>();
+        // 注册弹窗父类
+        containerRegistry.RegisterDialogWindow<DialogWindowEX>();
+        // 注册弹窗
+        containerRegistry.RegisterDialog<LoginView>();
     }
 
     /// <summary>

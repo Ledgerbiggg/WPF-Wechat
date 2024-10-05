@@ -50,3 +50,6 @@ E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Assets\Styles\S
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Assets\Styles\ButtonStyle.baml
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Assets\Styles\ImageStyle.baml
 E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Assets\Styles\RichTextBoxStyle.baml
+E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Views\Pages\DialogWindowEX.g.cs
+E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Views\Pages\DialogWindowEX.baml
+E:\project\dot_net\WPF-Wechat\Le.WeChat\obj\Debug\net8.0-windows\Assets\Styles\HyperlinkStyle.baml

@@ -141,4 +141,36 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    <!-- 登录按钮的样式 -->
+    <Style x:Key="LoginButton" TargetType="Button">
+        <!-- 去除原生样式 -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}" 
+                            CornerRadius="5"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <!-- 鼠标移入背景变深 -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#059B50"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <!-- 基本设置 -->
+        <Setter Property="Width" Value="150"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontWeight" Value="500"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Background" Value="#07C160"/>
+        <Setter Property="BorderBrush" Value="Transparent"/> <!-- 无边框 -->
+    </Style>
 </ResourceDictionary>

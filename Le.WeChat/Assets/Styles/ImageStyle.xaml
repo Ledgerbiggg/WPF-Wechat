@@ -12,15 +12,25 @@
         <Setter Property="Margin" Value="5" />
     </Style>
 
-    <!-- 左边头像的样式 (继承基础样式) -->
+    <!-- 消息对话的左边头像的样式 (继承基础样式) -->
     <Style x:Key="LeftAvatarImageStyle" TargetType="Image" BasedOn="{StaticResource BaseAvatarImageStyle}">
         <Setter Property="Visibility" Value="{Binding IsSentByMe, Converter={StaticResource BoolToVisConverter}}" />
         <Setter Property="Source" Value="{Binding DataContext.MessageModel.AvatarUrl, RelativeSource={RelativeSource AncestorType=ItemsControl}}" />
     </Style>
 
-    <!-- 右边头像的样式 (继承基础样式) -->
+    <!-- 消息对话的右边头像的样式 (继承基础样式) -->
     <Style x:Key="RightAvatarImageStyle" TargetType="Image" BasedOn="{StaticResource BaseAvatarImageStyle}">
         <Setter Property="Visibility" Value="{Binding IsSentByMe, Converter={StaticResource InverseBoolToVisConverter}}" />
         <Setter Property="Source" Value="/Assets/Images/user0.jpg" />
+    </Style>
+    <!-- 登录界面的头像样式 -->
+    <Style x:Key="LoginAvatar" TargetType="Border">
+        <!-- 设置圆角 -->
+        <Setter Property="CornerRadius" Value="10"/>
+        <!-- 确保内容被裁剪到圆角范围内 -->
+        <Setter Property="ClipToBounds" Value="True"/>
+        <!-- 设置边框宽高，与图片宽高保持一致 -->
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Height" Value="80"/>
     </Style>
 </ResourceDictionary>
