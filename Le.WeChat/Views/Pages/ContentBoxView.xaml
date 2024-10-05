@@ -64,21 +64,31 @@
                                     HorizontalAlignment="Left" 
                                     Grid.Column="1" 
                                     Visibility="{Binding IsSentByMe, 
-                                    Converter={StaticResource BoolToVisConverter}}">
-                                    <TextBlock 
-                                        Style="{StaticResource RightContent}"
-                                        Text="{Binding Content}">
-                                    </TextBlock>
+                                    Converter={StaticResource InverseBoolToVisConverter}}">
+                                    <!-- 倒三角形 -->
+                                    <Polygon Points="10,0 0,10 10,20" Style="{StaticResource LeftTriangleStyle}" 
+                                             VerticalAlignment="Center" />
+                                    <Border Style="{StaticResource LeftContentBorder}">
+                                        <TextBox  
+                                            Style="{StaticResource BaseContent}"
+                                            Text="{Binding Content}" />
+                                    </Border>
                                 </DockPanel>
                                 <!-- 右边的消息内容 -->
                                 <DockPanel  
                                     VerticalAlignment="Top"
                                     HorizontalAlignment="Right" Grid.Column="1" 
-                                    Visibility="{Binding IsSentByMe, 
-                                    Converter={StaticResource InverseBoolToVisConverter}}">
-                                    <TextBlock 
-                                        Style="{StaticResource LeftContent}"
-                                        Text="{Binding Content}"></TextBlock>
+                                    Visibility="{Binding IsSentByMe,    
+                                    Converter={StaticResource BoolToVisConverter}}">
+                                    <!-- 右侧内容带圆角和背景 -->
+                                    <Border Style="{StaticResource RightContentBorder}">
+                                            <TextBox  
+                                                Style="{StaticResource BaseContent}"
+                                                Text="{Binding Content}" />
+                                    </Border>
+                                    <!-- 倒三角形 -->
+                                    <Polygon Points="0,0 10,10 0,20" Style="{StaticResource RightTriangleStyle}" 
+                                             VerticalAlignment="Top" />
                                 </DockPanel>
                                 <!-- 右边的头像 -->
                                 <StackPanel Grid.Column="2"  Width="50">
@@ -118,10 +128,11 @@
                 </StackPanel>
     
                 <!-- 重写MessageSendRichTextBoxStyle样式 -->
-                <RichTextBox  Grid.Row="1" 
-                              VerticalScrollBarVisibility="Auto"
-                              Style="{StaticResource MessageSendRichTextBoxStyle}">
-                </RichTextBox>
+                <TextBox   Grid.Row="1" 
+                           Text="{Binding CurrentMessageContent, Mode=TwoWay}"
+                           Height="200"
+                           Style="{StaticResource MessageSendRichTextBoxStyle}">
+                </TextBox>
             </Grid>
         </Border>
         <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">

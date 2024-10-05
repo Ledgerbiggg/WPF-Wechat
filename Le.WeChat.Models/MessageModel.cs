@@ -27,6 +27,19 @@ public class MessageModel : BindableBase
 
     // 是否被选中
     private bool _isSelected;
+    
+    // 新增一条消息
+    public void AddMessageContents(string content, MessageType messageType = MessageType.Text)
+    {
+        MessageContents.Add(new MessageContentModel
+        {
+            Content = content,
+            SentTime = DateTime.Now,
+            ContentType = messageType,
+            IsSentByMe = true
+        });
+        
+    }
 
     // 是否被选中 (响应式属性)
     public bool IsSelected

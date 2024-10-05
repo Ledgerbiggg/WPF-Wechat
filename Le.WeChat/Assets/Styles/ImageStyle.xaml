@@ -7,20 +7,21 @@
     <converter:InverseBooleanToVisibilityConverter x:Key="InverseBoolToVisConverter"/>
     <!-- 基础 Image 样式 -->
     <Style x:Key="BaseAvatarImageStyle" TargetType="Image">
-        <Setter Property="Width" Value="30" />
-        <Setter Property="Height" Value="30" />
-        <Setter Property="Margin" Value="5" />
+        <Setter Property="Width" Value="35" />
+        <Setter Property="Height" Value="35" />
     </Style>
 
     <!-- 消息对话的左边头像的样式 (继承基础样式) -->
     <Style x:Key="LeftAvatarImageStyle" TargetType="Image" BasedOn="{StaticResource BaseAvatarImageStyle}">
-        <Setter Property="Visibility" Value="{Binding IsSentByMe, Converter={StaticResource BoolToVisConverter}}" />
+        <Setter Property="Margin" Value="5,5,-10,5" />
+        <Setter Property="Visibility" Value="{Binding IsSentByMe, Converter={StaticResource InverseBoolToVisConverter}}" />
         <Setter Property="Source" Value="{Binding DataContext.MessageModel.AvatarUrl, RelativeSource={RelativeSource AncestorType=ItemsControl}}" />
     </Style>
 
     <!-- 消息对话的右边头像的样式 (继承基础样式) -->
     <Style x:Key="RightAvatarImageStyle" TargetType="Image" BasedOn="{StaticResource BaseAvatarImageStyle}">
-        <Setter Property="Visibility" Value="{Binding IsSentByMe, Converter={StaticResource InverseBoolToVisConverter}}" />
+        <Setter Property="Margin" Value="-10,5,5,5" />
+        <Setter Property="Visibility" Value="{Binding IsSentByMe, Converter={StaticResource BoolToVisConverter}}" />
         <Setter Property="Source" Value="/Assets/Images/user0.jpg" />
     </Style>
     <!-- 登录界面的头像样式 -->

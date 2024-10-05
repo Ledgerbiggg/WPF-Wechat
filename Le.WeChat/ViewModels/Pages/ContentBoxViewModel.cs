@@ -8,14 +8,15 @@ namespace LeWeChat.ViewModels.Pages;
 public class ContentBoxViewModel : ViewModelBase
 {
     public DelegateCommand SendCommand { get; set; }
-    private string _currentMessage;
-    private readonly IEventAggregator _eventAggregator;
+    private string _currentMessageContent;
+    // 当前的消息
     private MessageModel _messageModel;
+    private readonly IEventAggregator _eventAggregator;
 
-    public string CurrentMessage
+    public string CurrentMessageContent
     {
-        get => _currentMessage;
-        set => SetProperty(ref _currentMessage, value);
+        get => _currentMessageContent;
+        set => SetProperty(ref _currentMessageContent, value);
     }
     public MessageModel MessageModel
     {
@@ -28,6 +29,13 @@ public class ContentBoxViewModel : ViewModelBase
     {
         _eventAggregator = eventAggregator;
         _eventAggregator.GetEvent<MessageEvent>().Subscribe(SubscribeCommand);
+        SendCommand = new DelegateCommand(Send);
+    }
+
+    private void Send()
+    {
+        _messageModel.AddMessageContents(CurrentMessageContent);
+        CurrentMessageContent = string.Empty;
     }
 
     private void SubscribeCommand(MessageModel messageModel)
