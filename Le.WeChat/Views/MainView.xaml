@@ -6,7 +6,7 @@
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         xmlns:regions="http://prismlibrary.com/"
         xmlns:controls="clr-namespace:LeWeChat.Controls"
-        Icon="../Assets/Images/wechat-icon.png"
+        Icon="../Assets/Images/wechat-icon.ico"
         MinHeight="400" MinWidth="700"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" FontFamily="Microsoft YaHei"
         FontSize="13" Foreground="#333" FontWeight="ExtraLight"
@@ -86,7 +86,7 @@
                             <Button Content="&#xe620;" FontFamily="{StaticResource Icons}"
                                     Background="Transparent"
                                     Height="20" Width="20"
-                                    Style="{StaticResource ControlButtonStyle}" />
+                                    Style="{StaticResource ControlWindowButtonStyle}" />
                         </StackPanel>
                     </Grid>
                     <StackPanel Grid.Row="1">
@@ -109,17 +109,17 @@
                                       Click="ButtonPin_Click" />
                         <!-- 最小化按钮 -->
                         <Button Content="&#xe7c8;" FontFamily="{StaticResource Icons}"
-                                Style="{StaticResource ControlButtonStyle}"
+                                Style="{StaticResource ControlWindowButtonStyle}"
                                 Click="ButtonMin_Click" />
 
                         <!-- 最大化/还原按钮 -->
                         <Button Content="&#xe7cf;" FontFamily="{StaticResource Icons}"
-                                Style="{StaticResource ControlButtonStyle}"
+                                Style="{StaticResource ControlWindowButtonStyle}"
                                 Click="ButtonMax_Click" />
 
                         <!-- 关闭按钮 -->
                         <Button Content="&#xe7c1;" FontFamily="{StaticResource Icons}"
-                                Style="{StaticResource ControlButtonStyle}"
+                                Style="{StaticResource ControlWindowButtonStyle}"
                                 Click="Button_Close_Click" />
                     </StackPanel>
                     <!-- 消息窗体的内容 -->

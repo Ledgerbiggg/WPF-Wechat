@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Le.WeChat")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+58ff5f325337ac915d4a04424577bcf305ce78db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e150bdbde0a453c12e59d3286434ceee7b1e1802")]
 [assembly: System.Reflection.AssemblyProductAttribute("Le.WeChat")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Le.WeChat")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -14,9 +14,12 @@
 
             <!-- 合并外部样式字典 -->
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Assets/Styles/ButtonStyles.xaml" />
-                <ResourceDictionary Source="/Assets/Styles/ImageStyles.xaml" />
+                <ResourceDictionary Source="/Assets/Styles/ButtonStyle.xaml" />
+                <ResourceDictionary Source="/Assets/Styles/ImageStyle.xaml" />
                 <ResourceDictionary Source="/Assets/Styles/ContentStyle.xaml" />
+                <ResourceDictionary Source="/Assets/Styles/ScrollBarStyle.xaml" />
+                <ResourceDictionary Source="/Assets/Styles/RichTextBoxStyle.xaml" />
+                <ResourceDictionary Source="/Assets/Styles/HyperlinkStyle.xaml" />
                 <ResourceDictionary>
                     <FontFamily x:Key="Icons">/Assets/Fonts/#iconfont</FontFamily>
                 </ResourceDictionary>

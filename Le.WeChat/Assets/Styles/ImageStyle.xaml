@@ -1,0 +1,37 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter="clr-namespace:Le.WeChat.Common.Converter;assembly=Le.WeChat.Common">
+    
+    <!-- 全局的 BooleanToVisibilityConverter -->
+    <BooleanToVisibilityConverter x:Key="BoolToVisConverter"/>
+    <converter:InverseBooleanToVisibilityConverter x:Key="InverseBoolToVisConverter"/>
+    <!-- 基础 Image 样式 -->
+    <Style x:Key="BaseAvatarImageStyle" TargetType="Image">
+        <Setter Property="Width" Value="35" />
+        <Setter Property="Height" Value="35" />
+    </Style>
+
+    <!-- 消息对话的左边头像的样式 (继承基础样式) -->
+    <Style x:Key="LeftAvatarImageStyle" TargetType="Image" BasedOn="{StaticResource BaseAvatarImageStyle}">
+        <Setter Property="Margin" Value="5,5,-10,5" />
+        <Setter Property="Visibility" Value="{Binding IsSentByMe, Converter={StaticResource InverseBoolToVisConverter}}" />
+        <Setter Property="Source" Value="{Binding DataContext.MessageModel.AvatarUrl, RelativeSource={RelativeSource AncestorType=ItemsControl}}" />
+    </Style>
+
+    <!-- 消息对话的右边头像的样式 (继承基础样式) -->
+    <Style x:Key="RightAvatarImageStyle" TargetType="Image" BasedOn="{StaticResource BaseAvatarImageStyle}">
+        <Setter Property="Margin" Value="-10,5,5,5" />
+        <Setter Property="Visibility" Value="{Binding IsSentByMe, Converter={StaticResource BoolToVisConverter}}" />
+        <Setter Property="Source" Value="/Assets/Images/user0.jpg" />
+    </Style>
+    <!-- 登录界面的头像样式 -->
+    <Style x:Key="LoginAvatar" TargetType="Border">
+        <!-- 设置圆角 -->
+        <Setter Property="CornerRadius" Value="10"/>
+        <!-- 确保内容被裁剪到圆角范围内 -->
+        <Setter Property="ClipToBounds" Value="True"/>
+        <!-- 设置边框宽高，与图片宽高保持一致 -->
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Height" Value="80"/>
+    </Style>
+</ResourceDictionary>
