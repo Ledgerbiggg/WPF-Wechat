@@ -1,0 +1,32 @@
+# Ignore Visual Studio temporary files, build results, and
+# include obj folders to be ignored
+
+# Ignore Visual Studio temporary files
+*.user
+*.suo
+
+# Ignore build results
+bin/
+obj/
+
+# Ignore packages directory for .NET Core
+**/bin
+**/obj
+
+# Ignore Visual Studio Code specific files
+.vscode/
+.idea/
+
+# Ignore NuGet packages
+*.nupkg
+*.snupkg
+
+# Ignore files from Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# Ignore other files like logs and temporary backups
+*.log
+*.tmp
+*.bak
+
