@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using Prism.Mvvm;
 
-namespace Le.WeChat.Model;
+namespace Le.WeChat.Model.Model;
 public class MessageModel : BindableBase
 {
     // 消息的标题

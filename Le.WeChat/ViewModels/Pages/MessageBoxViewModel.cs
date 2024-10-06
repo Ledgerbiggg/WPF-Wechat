@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using Le.WeChat.Model;
 using Le.WeChat.Model.Event;
+using Le.WeChat.Model.Model;
 using Le.WeChat.Service.IService;
 using Prism.Commands;
 using Prism.Events;

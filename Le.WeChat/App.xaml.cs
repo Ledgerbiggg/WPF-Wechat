@@ -24,6 +24,7 @@ public partial class App : PrismApplication
     {
         // 注册服务
         containerRegistry.Register<IMessageService, MessageService>();
+        containerRegistry.Register<IEmojiService, EmojiService>();
         // 注册导航
         containerRegistry.RegisterForNavigation<MessageBoxView>();
         containerRegistry.RegisterForNavigation<ContentBoxView>();
@@ -53,6 +54,7 @@ public partial class App : PrismApplication
 
         // 打开初始的消息页面
         Container.Resolve<IRegionManager>().RequestNavigate("MessageRegion", "MessageBoxView");
+        // 打开内容对话页面
         Container.Resolve<IRegionManager>().RequestNavigate("ContentRegion", "ContentBoxView");
     }
 }

@@ -17,23 +17,24 @@
         <!-- 联系人的名字 -->
         <Border Grid.Row="0"
                 BorderBrush="#D1D2D3"
-                BorderThickness="0,0,0,1" 
+                BorderThickness="0,0,0,1"
                 Padding="0,0,0,1">
             <TextBlock Text="{Binding MessageModel.Title}"
                        FontSize="20"
                        FontWeight="20"
                        Height="30"
-                       Padding="10,0"/>
+                       Padding="10,0" />
         </Border>
         <!-- 最外面包一层滚动条的控件 -->
-        <ScrollViewer x:Name="ChatScrollViewer" Grid.Row="1" VerticalScrollBarVisibility="Auto" Template="{StaticResource WechatScrollViewer}">
+        <ScrollViewer x:Name="ChatScrollViewer" Grid.Row="1" VerticalScrollBarVisibility="Auto"
+                      Template="{StaticResource WechatScrollViewer}">
             <!-- 遍历所有的消息内容去拼接成对话 -->
-            <ItemsControl  ItemsSource="{Binding MessageModel.MessageContents}">
+            <ItemsControl ItemsSource="{Binding MessageModel.MessageContents}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Grid Margin="10" >
+                        <Grid Margin="10">
                             <Grid.RowDefinitions>
-                                <!-- 时间 --> 
+                                <!-- 时间 -->
                                 <RowDefinition Height="25"></RowDefinition>
                                 <!-- 消息内容 -->
                                 <RowDefinition Height="Auto"></RowDefinition>
@@ -51,48 +52,48 @@
                             <Grid Grid.Row="1">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="*" />  
-                                    <ColumnDefinition Width="Auto" /> 
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
                                 <!-- 左边的头像 -->
                                 <StackPanel Grid.Column="0" Width="50">
-                                    <Image  Style="{StaticResource LeftAvatarImageStyle}"/>
+                                    <Image Style="{StaticResource LeftAvatarImageStyle}" />
                                 </StackPanel>
                                 <!-- 左边的消息内容 -->
-                                <DockPanel 
+                                <DockPanel
                                     VerticalAlignment="Top"
-                                    HorizontalAlignment="Left" 
-                                    Grid.Column="1" 
+                                    HorizontalAlignment="Left"
+                                    Grid.Column="1"
                                     Visibility="{Binding IsSentByMe, 
                                     Converter={StaticResource InverseBoolToVisConverter}}">
                                     <!-- 倒三角形 -->
-                                    <Polygon Points="10,0 0,10 10,20" Style="{StaticResource LeftTriangleStyle}" 
+                                    <Polygon Points="10,0 0,10 10,20" Style="{StaticResource LeftTriangleStyle}"
                                              VerticalAlignment="Center" />
                                     <Border Style="{StaticResource LeftContentBorder}">
-                                        <TextBox  
+                                        <TextBox
                                             Style="{StaticResource BaseContent}"
                                             Text="{Binding Content}" />
                                     </Border>
                                 </DockPanel>
                                 <!-- 右边的消息内容 -->
-                                <DockPanel  
+                                <DockPanel
                                     VerticalAlignment="Top"
-                                    HorizontalAlignment="Right" Grid.Column="1" 
+                                    HorizontalAlignment="Right" Grid.Column="1"
                                     Visibility="{Binding IsSentByMe,    
                                     Converter={StaticResource BoolToVisConverter}}">
                                     <!-- 右侧内容带圆角和背景 -->
                                     <Border Style="{StaticResource RightContentBorder}">
-                                            <TextBox  
-                                                Style="{StaticResource BaseContent}"
-                                                Text="{Binding Content}" />
+                                        <TextBox
+                                            Style="{StaticResource BaseContent}"
+                                            Text="{Binding Content}" />
                                     </Border>
                                     <!-- 倒三角形 -->
-                                    <Polygon Points="0,0 10,10 0,20" Style="{StaticResource RightTriangleStyle}" 
+                                    <Polygon Points="0,0 10,10 0,20" Style="{StaticResource RightTriangleStyle}"
                                              VerticalAlignment="Top" />
                                 </DockPanel>
                                 <!-- 右边的头像 -->
-                                <StackPanel Grid.Column="2"  Width="50">
-                                    <Image Style="{StaticResource RightAvatarImageStyle}"/>
+                                <StackPanel Grid.Column="2" Width="50">
+                                    <Image Style="{StaticResource RightAvatarImageStyle}" />
                                 </StackPanel>
                             </Grid>
                         </Grid>
@@ -101,13 +102,13 @@
             </ItemsControl>
         </ScrollViewer>
         <!-- 第二行：GridSplitter，用于调整高度 -->
-        <GridSplitter Grid.Row="2" 
-                      HorizontalAlignment="Stretch" 
-                      Height="5" 
-                      Background="Transparent" 
-                      ResizeBehavior="PreviousAndNext" 
-                      VerticalAlignment="Stretch" 
-                      ShowsPreview="True"/>
+        <GridSplitter Grid.Row="2"
+                      HorizontalAlignment="Stretch"
+                      Height="5"
+                      Background="Transparent"
+                      ResizeBehavior="PreviousAndNext"
+                      VerticalAlignment="Stretch"
+                      ShowsPreview="True" />
         <!-- 消息的输入框 -->
         <Border Grid.Row="3" BorderBrush="#E5E5E5" BorderThickness="0,1,0,0">
             <Grid>
@@ -118,20 +119,48 @@
                 <!-- 上面的几个功能图标 -->
                 <StackPanel Orientation="Horizontal" Grid.Row="0">
                     <Button Content="&#xe601;" FontFamily="{StaticResource Icons}"
-                            Style="{StaticResource MessageSendHelpButtonStyle}"/>
+                            Style="{StaticResource MessageSendHelpButtonStyle}"
+                            Click="OnEmojiButtonClick" />
                     <Button Content="&#xe630;" FontFamily="{StaticResource Icons}"
-                            Style="{StaticResource MessageSendHelpButtonStyle}"/>
+                            Style="{StaticResource MessageSendHelpButtonStyle}" />
                     <Button Content="&#xe600;" FontFamily="{StaticResource Icons}"
-                            Style="{StaticResource MessageSendHelpButtonStyle}"/>                    
+                            Style="{StaticResource MessageSendHelpButtonStyle}" />
                     <Button Content="&#xe66c;" FontFamily="{StaticResource Icons}"
-                            Style="{StaticResource MessageSendHelpButtonStyle}"/>
+                            Style="{StaticResource MessageSendHelpButtonStyle}" />
                 </StackPanel>
-    
+                <!-- 悬浮的表情选择框 -->
+                <Popup Grid.Row="0" Name="EmojiPopup" PlacementTarget="{Binding ElementName=emojiButton}"
+                       Placement="Bottom" StaysOpen="False" VerticalOffset="-400">
+                    <Border Background="White" BorderBrush="Gray" BorderThickness="1" Width="250">
+                        <ItemsControl ItemsSource="{Binding EmojiModels}" HorizontalAlignment="Center">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel ItemWidth="30" ItemHeight="30" />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <!-- 使用 Button 展示表情 -->
+                                    <Button Content="{Binding EmojiCode}"
+                                            Background="White"
+                                            Width="30"
+                                            Height="30"
+                                            BorderThickness="0"
+                                            BorderBrush="Transparent"
+                                            Margin="0" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </Border>
+                </Popup>
+
+
                 <!-- 重写MessageSendRichTextBoxStyle样式 -->
-                <TextBox   Grid.Row="1" 
-                           Text="{Binding CurrentMessageContent, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                           Height="200"
-                           Style="{StaticResource MessageSendRichTextBoxStyle}">
+                <TextBox Grid.Row="1"
+                         Text="{Binding CurrentMessageContent, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                         Height="200"
+                         Style="{StaticResource MessageSendRichTextBoxStyle}">
                     <TextBox.InputBindings>
                         <KeyBinding Key="Enter" Command="{Binding SendCommand}" />
                     </TextBox.InputBindings>
