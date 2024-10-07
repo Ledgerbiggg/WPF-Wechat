@@ -20,7 +20,6 @@
       <None Remove="Assets\Images\wechat-icon.jpg" />
       <Resource Include="Assets\Images\user0.jpg" />
       <None Remove="Assets\Images\wechat-icon.png" />
-      <Resource Include="Assets\Images\wechat-icon.png" />
       <None Remove="Assets\Images\user2.jpg" />
       <Resource Include="Assets\Images\user2.jpg" />
       <None Remove="Assets\Images\user3.jpg" />
