@@ -13,7 +13,7 @@ namespace LeWeChat.ViewModels.Pages;
 public class MessageBoxViewModel : ViewModelBase
 {
 
-    public DelegateCommand<Object> ClickMessageItemCommand { get; set; }
+    public DelegateCommand<MessageModel> ClickMessageItemCommand { get; set; }
     private ObservableCollection<MessageModel> _messageModels;
     private readonly IMessageService _messageService;
     private readonly IRegionManager _regionManager;
@@ -37,16 +37,28 @@ public class MessageBoxViewModel : ViewModelBase
         _eventAggregator = eventAggregator;
         // 获取所有的消息内容
         MessageModels = new ObservableCollection<MessageModel>(_messageService.GetAllMessages());
-        ClickMessageItemCommand = new DelegateCommand<object>(ClickMessageItem);
+        ClickMessageItemCommand = new DelegateCommand<MessageModel>(ClickMessageItem);
+        // 初始化第一条选中的消息内容
+        InitFirstMessage();
+
+    }
+    private void InitFirstMessage()
+    {
+        // 获取所有的消息内容
+        var selectedMessage = MessageModels.FirstOrDefault(m => m.IsSelected) ?? MessageModels.FirstOrDefault();
+        if (selectedMessage != null)
+        {
+            ClickMessageItem(selectedMessage);
+        }
+
     }
 
     /// <summary>
     /// 点击消息条目触发的事件
     /// </summary>
-    /// <param name="obj"></param>
-    public void ClickMessageItem(object obj)
+    /// <param name="messageModel"></param>
+    private void ClickMessageItem(MessageModel messageModel)
     {
-        var messageModel = (MessageModel)obj;
         // 将点击的项设置为选中
         foreach (var message in MessageModels)
         {

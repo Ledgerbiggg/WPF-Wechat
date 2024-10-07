@@ -33,7 +33,7 @@
                             <RowDefinition Height="110"></RowDefinition>
                         </Grid.RowDefinitions>
                         <StackPanel Grid.Row="0" Margin="0,20,0,0">
-                            <Image Source="../Assets/Images/user1.jpg" Width="40" Height="40" />
+                            <Image Source="../Assets/Images/user0.jpg" Width="40" Height="40" />
                             <StackPanel Margin="20,20,0,0">
                                 <RadioButton Content="&#xe63c;" FontFamily="{StaticResource Icons}"
                                              Background="Transparent" GroupName="IconGroupTop" IsChecked="True"

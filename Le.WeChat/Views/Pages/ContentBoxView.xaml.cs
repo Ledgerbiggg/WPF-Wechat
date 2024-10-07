@@ -2,15 +2,18 @@
 using System.Windows.Controls;
 using Le.WeChat.Model;
 using Le.WeChat.Model.Event;
+using Prism.Commands;
 using Prism.Events;
 
 namespace LeWeChat.Views.Pages;
 
 public partial class ContentBoxView : UserControl
 {
+
+
     private ScrollViewer _chatScrollViewer { get; set; }
     private readonly IEventAggregator _eventAggregator;
-    
+
     public ContentBoxView(IEventAggregator eventAggregator)
     {
         InitializeComponent();
@@ -25,9 +28,5 @@ public partial class ContentBoxView : UserControl
         _chatScrollViewer.ScrollToBottom();
     }
 
-    private void OnEmojiButtonClick(object sender, RoutedEventArgs e)
-    {
-        // 切换 Popup 的显示状态
-        EmojiPopup.IsOpen = !EmojiPopup.IsOpen;
-    }
+
 }

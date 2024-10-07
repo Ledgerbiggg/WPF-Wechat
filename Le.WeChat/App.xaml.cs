@@ -52,9 +52,10 @@ public partial class App : PrismApplication
     {
         base.InitializeShell(shell);
 
-        // 打开初始的消息页面
-        Container.Resolve<IRegionManager>().RequestNavigate("MessageRegion", "MessageBoxView");
         // 打开内容对话页面
         Container.Resolve<IRegionManager>().RequestNavigate("ContentRegion", "ContentBoxView");
+        
+        // 打开初始的消息页面
+        Container.Resolve<IRegionManager>().RequestNavigate("MessageRegion", "MessageBoxView");
     }
 }

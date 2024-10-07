@@ -19,7 +19,7 @@ public class MessageService : IMessageService
                 MessageId = "1",
                 IsMuted = false,
                 HasUnreadMessages = true,
-                IsSelected = false,
+                IsSelected = true,
                 MessageContents = new ObservableCollection<MessageContentModel>()
                 {
                     new MessageContentModel
@@ -148,7 +148,7 @@ public class MessageService : IMessageService
                 MessageId = "5",
                 IsMuted = false,
                 HasUnreadMessages = true,
-                IsSelected = true,
+                IsSelected = false,
                 MessageContents =
                 [
                     new MessageContentModel

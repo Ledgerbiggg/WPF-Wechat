@@ -18,9 +18,7 @@
       <None Remove="Assets\Fonts\iconfont.ttf" />
       <Resource Include="Assets\Fonts\iconfont.ttf" />
       <None Remove="Assets\Images\wechat-icon.jpg" />
-      <None Remove="Assets\Images\user1.jpg" />
       <Resource Include="Assets\Images\user0.jpg" />
-      <Resource Include="Assets\Images\user1.jpg" />
       <None Remove="Assets\Images\wechat-icon.png" />
       <Resource Include="Assets\Images\wechat-icon.png" />
       <None Remove="Assets\Images\user2.jpg" />
@@ -33,6 +31,8 @@
       <Resource Include="Assets\Images\user5.jpg" />
       <None Remove="Assets\Images\wechat-icon.ico" />
       <Resource Include="Assets\Images\wechat-icon.ico" />
+      <None Remove="Assets\Images\user1.jpg" />
+      <Resource Include="Assets\Images\user1.jpg" />
     </ItemGroup>
 
     <ItemGroup>

@@ -118,9 +118,9 @@
                 </Grid.RowDefinitions>
                 <!-- 上面的几个功能图标 -->
                 <StackPanel Orientation="Horizontal" Grid.Row="0">
-                    <Button Content="&#xe601;" FontFamily="{StaticResource Icons}"
+                    <Button x:Name="EmojiButton" Content="&#xe601;" FontFamily="{StaticResource Icons}"
                             Style="{StaticResource MessageSendHelpButtonStyle}"
-                            Click="OnEmojiButtonClick" />
+                            Command="{Binding ShowEmojiCommand}" />
                     <Button Content="&#xe630;" FontFamily="{StaticResource Icons}"
                             Style="{StaticResource MessageSendHelpButtonStyle}" />
                     <Button Content="&#xe600;" FontFamily="{StaticResource Icons}"
@@ -128,30 +128,39 @@
                     <Button Content="&#xe66c;" FontFamily="{StaticResource Icons}"
                             Style="{StaticResource MessageSendHelpButtonStyle}" />
                 </StackPanel>
-                <!-- 悬浮的表情选择框 -->
-                <Popup Grid.Row="0" Name="EmojiPopup" PlacementTarget="{Binding ElementName=emojiButton}"
-                       Placement="Bottom" StaysOpen="False" VerticalOffset="-400">
-                    <Border Background="White" BorderBrush="Gray" BorderThickness="1" Width="250">
-                        <ItemsControl ItemsSource="{Binding EmojiModels}" HorizontalAlignment="Center">
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <WrapPanel ItemWidth="30" ItemHeight="30" />
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
+                <Popup IsOpen="{Binding IsEmojiPopupOpen}"
+                       Grid.Row="0"
+                       PlacementTarget="{Binding ElementName=EmojiButton}"
+                       Placement="Bottom"
+                       StaysOpen="False"
+                       VerticalOffset="-200">
+                    <Border Background="White" BorderBrush="Gray" BorderThickness="1" Width="250" Height="150">
+                        <!-- 添加 ScrollViewer 实现滚动 -->
+                        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                      Template="{StaticResource  WechatScrollViewer}">
+                            <ItemsControl ItemsSource="{Binding EmojiModels}" HorizontalAlignment="Center">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel ItemWidth="30" ItemHeight="30" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
 
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <!-- 使用 Button 展示表情 -->
-                                    <Button Content="{Binding EmojiCode}"
-                                            Background="White"
-                                            Width="30"
-                                            Height="30"
-                                            BorderThickness="0"
-                                            BorderBrush="Transparent"
-                                            Margin="0" />
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <!-- 使用 Button 展示表情 -->
+                                        <Button Content="{Binding EmojiCode}"
+                                                Command="{Binding DataContext.SelectEmojiCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                                CommandParameter="{Binding}"
+                                                Background="White"
+                                                Width="30"
+                                                Height="30"
+                                                BorderThickness="0"
+                                                BorderBrush="Transparent"
+                                                Margin="0" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
                     </Border>
                 </Popup>
 
