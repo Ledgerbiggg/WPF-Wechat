@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:LeWeChat.Views.Pages"
+             xmlns:c="clr-namespace:LeWeChat.Controls"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -110,72 +111,9 @@
                       VerticalAlignment="Stretch"
                       ShowsPreview="True" />
         <!-- 消息的输入框 -->
-        <Border Grid.Row="3" BorderBrush="#E5E5E5" BorderThickness="0,1,0,0">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="40"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <!-- 上面的几个功能图标 -->
-                <StackPanel Orientation="Horizontal" Grid.Row="0">
-                    <Button x:Name="EmojiButton" Content="&#xe601;" FontFamily="{StaticResource Icons}"
-                            Style="{StaticResource MessageSendHelpButtonStyle}"
-                            Command="{Binding ShowEmojiCommand}" />
-                    <Button Content="&#xe630;" FontFamily="{StaticResource Icons}"
-                            Style="{StaticResource MessageSendHelpButtonStyle}" />
-                    <Button Content="&#xe600;" FontFamily="{StaticResource Icons}"
-                            Style="{StaticResource MessageSendHelpButtonStyle}" />
-                    <Button Content="&#xe66c;" FontFamily="{StaticResource Icons}"
-                            Style="{StaticResource MessageSendHelpButtonStyle}" />
-                </StackPanel>
-                <Popup IsOpen="{Binding IsEmojiPopupOpen}"
-                       Grid.Row="0"
-                       PlacementTarget="{Binding ElementName=EmojiButton}"
-                       Placement="Bottom"
-                       StaysOpen="False"
-                       VerticalOffset="-200">
-                    <Border Background="White" BorderBrush="Gray" BorderThickness="1" Width="250" Height="150">
-                        <!-- 添加 ScrollViewer 实现滚动 -->
-                        <ScrollViewer VerticalScrollBarVisibility="Auto"
-                                      Template="{StaticResource  WechatScrollViewer}">
-                            <ItemsControl ItemsSource="{Binding EmojiModels}" HorizontalAlignment="Center">
-                                <ItemsControl.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <WrapPanel ItemWidth="30" ItemHeight="30" />
-                                    </ItemsPanelTemplate>
-                                </ItemsControl.ItemsPanel>
-
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <!-- 使用 Button 展示表情 -->
-                                        <Button Content="{Binding EmojiCode}"
-                                                Command="{Binding DataContext.SelectEmojiCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
-                                                CommandParameter="{Binding}"
-                                                Background="White"
-                                                Width="30"
-                                                Height="30"
-                                                BorderThickness="0"
-                                                BorderBrush="Transparent"
-                                                Margin="0" />
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
-                        </ScrollViewer>
-                    </Border>
-                </Popup>
-
-
-                <!-- 重写MessageSendRichTextBoxStyle样式 -->
-                <TextBox Grid.Row="1"
-                         Text="{Binding CurrentMessageContent, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                         Height="200"
-                         Style="{StaticResource MessageSendRichTextBoxStyle}">
-                    <TextBox.InputBindings>
-                        <KeyBinding Key="Enter" Command="{Binding SendCommand}" />
-                    </TextBox.InputBindings>
-                </TextBox>
-            </Grid>
-        </Border>
+        <UserControl Grid.Row="3">
+            <c:ContentSendBox></c:ContentSendBox>
+        </UserControl>
         <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Content="发送(S)" Style="{StaticResource MessageSendButtonStyle}" Command="{Binding SendCommand}"></Button>
         </StackPanel>
