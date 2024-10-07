@@ -3,6 +3,7 @@ using System.Data;
 using System.Windows;
 using Le.WeChat.Service.IService;
 using Le.WeChat.Service.Service;
+using LeWeChat.Controls;
 using LeWeChat.Views;
 using LeWeChat.Views.Pages;
 using Prism.Ioc;
@@ -26,8 +27,8 @@ public partial class App : PrismApplication
         containerRegistry.Register<IMessageService, MessageService>();
         containerRegistry.Register<IEmojiService, EmojiService>();
         // 注册导航
-        containerRegistry.RegisterForNavigation<MessageBoxView>();
-        containerRegistry.RegisterForNavigation<ContentBoxView>();
+        containerRegistry.RegisterForNavigation<ChatListView>();
+        containerRegistry.RegisterForNavigation<ChatDetailView>();
         // 注册弹窗父类
         containerRegistry.RegisterDialogWindow<DialogWindowEX>();
         // 注册弹窗
@@ -53,9 +54,9 @@ public partial class App : PrismApplication
         base.InitializeShell(shell);
 
         // 打开内容对话页面
-        Container.Resolve<IRegionManager>().RequestNavigate("ContentRegion", "ContentBoxView");
+        Container.Resolve<IRegionManager>().RequestNavigate("ContentRegion", "ChatDetailView");
         
         // 打开初始的消息页面
-        Container.Resolve<IRegionManager>().RequestNavigate("MessageRegion", "MessageBoxView");
+        Container.Resolve<IRegionManager>().RequestNavigate("MessageRegion", "ChatListView");
     }
 }

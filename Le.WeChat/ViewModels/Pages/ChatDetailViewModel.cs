@@ -2,15 +2,20 @@
 using Le.WeChat.Model.Event;
 using Le.WeChat.Model.Model;
 using Le.WeChat.Service.IService;
+using Microsoft.Win32;
 using Prism.Commands;
 using Prism.Events;
+using Prism.Mvvm;
 
 namespace LeWeChat.ViewModels.Pages;
 
-public class ContentBoxViewModel : ViewModelBase
+public class ChatDetailViewModel : BindableBase
 {
     // 展示表情选择框的命令
     public DelegateCommand ShowEmojiCommand { get; set; }
+
+    // 选择文件的,命令
+    public DelegateCommand SelectFileCommand { get; set; }
 
     // 表情列表
     public ObservableCollection<EmojiModel> EmojiModels { get; set; }
@@ -55,7 +60,7 @@ public class ContentBoxViewModel : ViewModelBase
     }
 
 
-    public ContentBoxViewModel(
+    public ChatDetailViewModel(
         IEventAggregator eventAggregator,
         IEmojiService emojiService
     )
@@ -65,11 +70,26 @@ public class ContentBoxViewModel : ViewModelBase
         _eventAggregator.GetEvent<MessageEvent>().Subscribe(SubscribeChangeMessageCommand);
         ShowEmojiCommand = new DelegateCommand(ShowEmoji);
         SelectEmojiCommand = new DelegateCommand<EmojiModel>(SelectEmoji);
+        SelectFileCommand = new DelegateCommand(SelectFile);
         SendCommand = new DelegateCommand(Send);
         /*发布消息的时候通知消息的滚动条滚动到最下面*/
         _eventAggregator.GetEvent<SendEvent>().Publish();
         /*获取所有表情*/
         EmojiModels = new ObservableCollection<EmojiModel>(_emojiService.GetAllEmojiModel());
+    }
+
+    private void SelectFile()
+    {
+        // 创建文件选择对话框
+        OpenFileDialog openFileDialog = new OpenFileDialog();
+        openFileDialog.Filter = "All files (*.*)|*.*";  // 设置文件过滤器
+
+        // 如果用户选择了文件并点击确定
+        if (openFileDialog.ShowDialog() == true)
+        {
+            string selectedFilePath = openFileDialog.FileName;
+            // 在这里可以处理选中文件的路径，例如上传或显示
+        }
     }
 
     /// <summary>

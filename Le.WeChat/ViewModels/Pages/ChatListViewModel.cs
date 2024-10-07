@@ -10,7 +10,7 @@ using Prism.Regions;
 
 namespace LeWeChat.ViewModels.Pages;
 
-public class MessageBoxViewModel : ViewModelBase
+public class ChatListViewModel : BindableBase
 {
 
     public DelegateCommand<MessageModel> ClickMessageItemCommand { get; set; }
@@ -26,7 +26,7 @@ public class MessageBoxViewModel : ViewModelBase
         set => SetProperty(ref _messageModels, value);
     }
 
-    public MessageBoxViewModel(
+    public ChatListViewModel(
         IMessageService messageService,
         IRegionManager regionManager,
         IEventAggregator eventAggregator

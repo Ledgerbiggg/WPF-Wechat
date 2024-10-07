@@ -7,14 +7,14 @@ using Prism.Events;
 
 namespace LeWeChat.Views.Pages;
 
-public partial class ContentBoxView : UserControl
+public partial class ChatDetailView : UserControl
 {
 
 
     private ScrollViewer _chatScrollViewer { get; set; }
     private readonly IEventAggregator _eventAggregator;
 
-    public ContentBoxView(IEventAggregator eventAggregator)
+    public ChatDetailView(IEventAggregator eventAggregator)
     {
         InitializeComponent();
         _chatScrollViewer = ChatScrollViewer;

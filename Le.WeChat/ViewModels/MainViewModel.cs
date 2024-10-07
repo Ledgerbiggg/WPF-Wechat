@@ -51,8 +51,8 @@ public class MainViewModel : BindableBase
     /// <param name="obj"></param>
     private void NavigateToMessageBox(object obj)
     {
-        _regionManager.RequestNavigate("MessageRegion", "MessageBoxView");
-        _regionManager.RequestNavigate("ContentRegion", "ContentBoxView");
+        _regionManager.RequestNavigate("MessageRegion", "ChatListView");
+        _regionManager.RequestNavigate("ContentRegion", "ChatDetailView");
     }
     /// <summary>
     /// 点击联系人触发的导航
@@ -60,8 +60,7 @@ public class MainViewModel : BindableBase
     /// <param name="obj"></param>
     private void NavigateToContactsBox(object obj)
     {
-        _regionManager.RequestNavigate("MessageRegion", "MessageBoxView");
-        _regionManager.RequestNavigate("ContentRegion", "ContentBoxView");
+
     }
     /// <summary>
     /// 点击收藏触发的导航
@@ -69,7 +68,6 @@ public class MainViewModel : BindableBase
     /// <param name="obj"></param>
     private void NavigateToFavoritesBox(object obj)
     {
-        _regionManager.RequestNavigate("MessageRegion", "MessageBoxView");
-        _regionManager.RequestNavigate("ContentRegion", "ContentBoxView");
+
     }
 }

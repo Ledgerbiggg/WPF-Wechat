@@ -2,9 +2,9 @@
 
 namespace LeWeChat.Views.Pages;
 
-public partial class MessageBoxView : UserControl
+public partial class ChatListView : UserControl
 {
-    public MessageBoxView()
+    public ChatListView()
     {
         InitializeComponent();
     }

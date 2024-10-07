@@ -38,6 +38,11 @@
       <Page Update="Assets\Style\ButtonStyles.xaml">
         <Generator>MSBuild:Compile</Generator>
       </Page>
+      <Page Update="Controls\DialogWindowEX.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
     </ItemGroup>
 
     <ItemGroup>

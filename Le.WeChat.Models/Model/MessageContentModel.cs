@@ -1,6 +1,6 @@
 ﻿using Prism.Mvvm;
 
-namespace Le.WeChat.Model;
+namespace Le.WeChat.Model.Model;
 
 public class MessageContentModel : BindableBase
 {

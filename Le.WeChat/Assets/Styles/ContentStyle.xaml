@@ -34,6 +34,7 @@
     <Style x:Key="RightContentBorder" TargetType="Border" BasedOn="{StaticResource ContentWithCornerRadius}">
         <Setter Property="Background" Value="#89D961" /> <!-- 设置背景色到 Border -->
     </Style>
+    
 
     <!-- 三角形样式，颜色与左侧文本背景色一致 -->
     <Style x:Key="LeftTriangleStyle" TargetType="Polygon">
@@ -46,6 +47,14 @@
     
     <!-- 三角形样式，颜色与右侧文本背景色一致 -->
     <Style x:Key="RightTriangleStyle" TargetType="Polygon">
+        <Setter Property="Fill" Value="#89D961" /> <!-- 与背景色相同 -->
+        <Setter Property="Width" Value="15" />
+        <Setter Property="Height" Value="15" />
+        <Setter Property="Margin" Value="-4,15,0,0"></Setter>
+        <Setter Property="Stretch" Value="Uniform" />
+    </Style>
+    
+    <Style x:Key="TriangleStyleSelector" TargetType="Polygon">
         <Setter Property="Fill" Value="#89D961" /> <!-- 与背景色相同 -->
         <Setter Property="Width" Value="15" />
         <Setter Property="Height" Value="15" />

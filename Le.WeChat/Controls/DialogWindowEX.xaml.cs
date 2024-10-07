@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using Prism.Services.Dialogs;
 
-namespace LeWeChat.Views.Pages;
+namespace LeWeChat.Controls;
 
 public partial class DialogWindowEX : Window, IDialogWindow
 {
