@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using Le.WeChat.Model;
 using Le.WeChat.Model.Event;
+using Le.WeChat.Model.Model;
 using Le.WeChat.Service.IService;
 using Prism.Commands;
 using Prism.Events;
@@ -39,6 +40,10 @@ public class MessageBoxViewModel : ViewModelBase
         ClickMessageItemCommand = new DelegateCommand<object>(ClickMessageItem);
     }
 
+    /// <summary>
+    /// 点击消息条目触发的事件
+    /// </summary>
+    /// <param name="obj"></param>
     public void ClickMessageItem(object obj)
     {
         var messageModel = (MessageModel)obj;
@@ -56,7 +61,7 @@ public class MessageBoxViewModel : ViewModelBase
                 message.IsSelected = false;
             }
         }
-        // 发布一条事件
+        // 发布一条事件(将消息栏内部的消息修改成和这个相关的消息)
         _eventAggregator.GetEvent<MessageEvent>().Publish(messageModel);
     }
 }

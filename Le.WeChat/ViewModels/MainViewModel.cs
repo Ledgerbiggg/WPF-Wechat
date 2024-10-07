@@ -27,7 +27,7 @@ public class MainViewModel : BindableBase
         ToContactsBox = new DelegateCommand<object>(NavigateToContactsBox);
         ToFavoritesBox = new DelegateCommand<object>(NavigateToFavoritesBox);
         // 在启动主窗口之前启动登录窗口
-        OpenLoginWindow();
+        // OpenLoginWindow();
     }
 
     private void OpenLoginWindow()
@@ -36,7 +36,7 @@ public class MainViewModel : BindableBase
         {
             if (result.Result != ButtonResult.OK)
             {
-                Environment.Exit(0);
+                Environment.Exit(0);  
             }
             else
             {

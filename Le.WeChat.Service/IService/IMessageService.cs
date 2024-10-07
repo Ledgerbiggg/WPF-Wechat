@@ -1,4 +1,5 @@
 ﻿using Le.WeChat.Model;
+using Le.WeChat.Model.Model;
 
 namespace Le.WeChat.Service.IService;
 

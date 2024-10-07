@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using Le.WeChat.Model;
+using Le.WeChat.Model.Model;
 using Le.WeChat.Service.IService;
 
 namespace Le.WeChat.Service.Service;
